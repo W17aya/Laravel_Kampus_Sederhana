@@ -43,9 +43,12 @@
     },
     "devDependencies": {
         "autoprefixer": "9.8.0",
+        "bootstrap": "^4.0.0",
         "browser-sync": "2.26.7",
         "chokidar": "3.4.0",
         "concurrently": "5.2.0",
+        "jquery": "^3.2",
+        "popper.js": "^1.12",
         "postcss": "7.0.32",
         "prettier": "2.0.5",
         "pug": "3.0.0",

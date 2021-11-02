@@ -81,7 +81,7 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    SELAMAT DATANG
+                    SELAMAT DATANG WIJAYA
                 </div>
 
                 {{-- <div class="links">

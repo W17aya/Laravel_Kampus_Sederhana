@@ -25,8 +25,8 @@
 </nav>
 
 <div class="container text-center mt-3 p-4 bg-white">
-    <h1> data mahasiswa     </h1>
-    div class="row">
+    <h1> Data mahasiswa     </h1>
+    <!-- div class="row"> -->
  <div class="col-sm-8 col-md-6 m-auto">
  <ol class="list-group">
  @forelse ($mahasiswa as $val)

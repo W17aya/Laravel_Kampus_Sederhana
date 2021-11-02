@@ -1,5 +1,6 @@
 <?php
 
+use GuzzleHttp\Middleware;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -39,3 +40,19 @@ Route::get('/home', 'HomeController@index')->name('home');
 Route::get('/dashboard', function () {
     return view('layouts.template');
 });
+
+Route::get('/daftar-mahasiswa', 'MahasiswaController@daftarMahasiswa')
+->Middleware('login');
+
+ Route::get('/tabel-mahasiswa', 'MahasiswaController@tabelMahasiswa')
+ ->middleware('login');
+ Route::get('/blog-mahasiswa', 'MahasiswaController@blogMahasiswa')
+ ->middleware('coba');
+ Route::get('/mahasiswas/{mahasiswa}', 'MahasiswaController@show')
+->name('mahasiswas.show');
+Route::get('/form-pendaftaran','MahasiswaController@FormPendaftaran');
+Route::post('/proses-form','MahasiswaController@ProsesForm');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
