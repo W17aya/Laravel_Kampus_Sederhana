@@ -41,6 +41,9 @@ Route::get('/dashboard', function () {
     return view('layouts.template');
 });
 
+Route::get('/','MahasiswaController@index');
+
+
 Route::get('/daftar-mahasiswa', 'MahasiswaController@daftarMahasiswa')
 ->Middleware('login');
 
@@ -84,3 +87,17 @@ Route::get('/insert', 'MahasiswaController@insert');
  Route::get('/with-trashed', 'MahasiswaController@withTrashed');
  Route::get('/restore', 'MahasiswaController@restore');
  Route::get('/force-delete', 'MahasiswaController@forceDelete');
+
+
+ Route::get('/', 'MahasiswaController@index');
+Route::get('/insert-sql', 'MahasiswaController@insertSql');
+ Route::get('/insert-timestamp', 'MahasiswaController@insertTimestamp');
+ Route::get('/insert-prepared', 'MahasiswaController@insertPrepared');
+ Route::get('/insert-named-binding', 'MahasiswaController@insertNamedBinding');
+ Route::get('/update', 'MahasiswaController@update');
+ Route::get('/delete', 'MahasiswaController@delete');
+ Route::get('/select', 'MahasiswaController@select');
+ Route::get('/select-tampil', 'MahasiswaController@selectTampil');
+ Route::get('/select-view', 'MahasiswaController@selectView');
+ Route::get('/select-where', 'MahasiswaController@selectWhere');
+Route::get('/statement', 'MahasiswaController@statement');

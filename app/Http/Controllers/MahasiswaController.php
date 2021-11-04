@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Symfony\Component\CssSelector\Node\FunctionNode;
 
 class MahasiswaController extends Controller
 {
@@ -49,11 +50,15 @@ public function blogMahasiswa()
      return view('form-login');
      }
 
-    //  public function index()
-    //  {
-    //      $mahasiswas = Mahasiswa::all();
-    //      return view('mahasiswa.index',['mahasiswas'=> $mahasiswas]);
-    //  }
+     public function index()
+     {
+         return "Berhasil di proses";
+           }
+           public Function insertSql(){
+               $result = DB::insert("INSERT INTO mahasiswas(nim,nama,tanggal_lahir,ipk)
+               VALUES('19003036','Sari Citra Lestari', '2001-12-31',3.5)");
+
+           }
     
      public function prosesLogin(Request $request)
      {
@@ -93,6 +98,7 @@ public function blogMahasiswa()
          dd($mahasiswa);
      }
 
+     
      public function create()
      {
          return view('mahasiswa.create');

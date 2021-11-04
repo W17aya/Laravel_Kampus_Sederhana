@@ -34,19 +34,23 @@
  <ul class="navbar-nav mr-auto">
  <li class="nav-item">
  <a class="nav-link" href="{{url('/daftar-mahasiswa')}}">
- Daftar Mahasiswa
+ Beranda
  </a>
  </li>
  <li class="nav-item">
  <a class="nav-link" href="{{url('/tabel-mahasiswa')}}">
- Tabel Mahasiswa
+ Ormawa/Volunteer
  </a>
  </li>
  <li class="nav-item">
  <a class="nav-link" href="{{url('/blog-mahasiswa')}}">
- Blog Mahasiswa
+ Informasi
  </a>
  </li>
+ <li class="nav-item">
+ <a class="nav-link" href="{{url('/blog-mahasiswa')}}">
+ Informasi
+</li>
  </ul>
  <ul class="navbar-nav">
  <li class="nav-item">
