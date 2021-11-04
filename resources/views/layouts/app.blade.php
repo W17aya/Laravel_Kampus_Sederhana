@@ -35,6 +35,21 @@
                     <ul class="navbar-nav mr-auto">
 
                     </ul>
+                    <!-- Left Side Of Navbar -->
+<ul class="navbar-nav mr-auto">
+@auth
+<li class="nav-item">
+<a class="nav-link" href="{{url('/daftar-mahasiswa')}}">Daftar Mahasiswa</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="{{url('/tabel-mahasiswa')}}">Tabel Mahasiswa</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" href="{{url('/blog-mahasiswa')}}">Blog Mahasiswa</a>
+</li>
+@endauth
+</ul>
+
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">

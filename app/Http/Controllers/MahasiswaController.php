@@ -4,14 +4,37 @@ namespace App\Http\Controllers;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class MahasiswaController extends Controller
 {
-    public function daftarMahasiswa()
+    public function daftarMahasiswa(Request $request)
     {
     return view('halaman',['judul' => 'Daftar Mahasiswa']);
+        echo $request->user()->id."<br>";
+        echo $request->user()->name."<br>";
+        echo $request->user()->email."<br>";
+        echo $request->user()->password."<br>";
 
+        dump(Auth::user());
 }
+public function cekOject(){
+    $mahasiswa = new Mahasiswa;
+
+    Dump($mahasiswa);
+}
+    public function AllView(){
+        $mahasiswas = Mahasiswa::all();
+        return view('tampil_mahasiswa', ['mahasiswas' => $mahasiswas]);
+    }
+
+public function getWhere(){
+    $mahasiswas = Mahasiswa::where('ipk','<','3')
+    ->orderBy('nama','desc')
+    ->get();
+    return view('tampil-mahasiswa',['mahasiswas'=>$mahasiswas]);
+}
+
 public function tabelMahasiswa()
 {
     return view('halaman',['judul'=> 'Tabel Mahasiswa']);
@@ -26,11 +49,11 @@ public function blogMahasiswa()
      return view('form-login');
      }
 
-     public function index()
-     {
-         $mahasiswas = Mahasiswa::all();
-         return view('mahasiswa.index',['mahasiswas'=> $mahasiswas]);
-     }
+    //  public function index()
+    //  {
+    //      $mahasiswas = Mahasiswa::all();
+    //      return view('mahasiswa.index',['mahasiswas'=> $mahasiswas]);
+    //  }
     
      public function prosesLogin(Request $request)
      {
@@ -51,19 +74,19 @@ public function blogMahasiswa()
      }
      }
     
-     public function store(Request $request)
-     {
-         $validateData = $request->validate([
-            'nim' => 'required|size:8',
-             'nama' => 'required|min:3|max:50',
-             'jenis_kelamin' => 'required|in:P,L',
-             'jurusan' => 'required',
-             'alamat' => '',
-         ]);
+    //  public function store(Request $request)
+    //  {
+    //      $validateData = $request->validate([
+    //         'nim' => 'required|size:8',
+    //          'nama' => 'required|min:3|max:50',
+    //          'jenis_kelamin' => 'required|in:P,L',
+    //          'jurusan' => 'required',
+    //          'alamat' => '',
+    //      ]);
     
-         Mahasiswa::create($validateData);
-         return "Data berhasil diinput ke database";
-     }
+    //      Mahasiswa::create($validateData);
+    //      return "Data berhasil diinput ke database";
+    //  }
 
      public function show($mahasiswa)
      {
@@ -74,6 +97,20 @@ public function blogMahasiswa()
      {
          return view('mahasiswa.create');
      }
+
+    public function inser()
+    {
+        $mahasiswa= new Mahasiswa;
+        $mahasiswa-> nim = '19003036';
+        $mahasiswa->nama ='Sari Citra Lestari';
+        $mahasiswa->tanggal_lahir ='2021-12-31';
+        $mahasiswa->ipk = 3.5;
+        $mahasiswa->save();
+        
+        dump($mahasiswa);
+    }
+        
+    
 
      public function logout()
      {

@@ -53,6 +53,34 @@ Route::get('/daftar-mahasiswa', 'MahasiswaController@daftarMahasiswa')
 Route::get('/form-pendaftaran','MahasiswaController@FormPendaftaran');
 Route::post('/proses-form','MahasiswaController@ProsesForm');
 
-Auth::routes();
+// Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/cek-object', 'MahasiswaController@cekObject');
+
+Route::get('/insert', 'MahasiswaController@insert');
+ Route::get('/mass-assignment', 'MahasiswaController@massAssignment');
+ Route::get('/mass-assignment2', 'MahasiswaController@massAssignment2');
+
+ Route::get('/update', 'MahasiswaController@update');
+ Route::get('/update-where', 'MahasiswaController@updateWhere');
+ Route::get('/mass-update', 'MahasiswaController@massUpdate');
+
+ Route::get('/delete', 'MahasiswaController@delete');
+ Route::get('/destroy', 'MahasiswaController@destroy');
+ Route::get('/mass-delete', 'MahasiswaController@massDelete');
+
+ Route::get('/all', 'MahasiswaController@all');
+ Route::get('/all-view', 'MahasiswaController@allView');
+ Route::get('/get-where', 'MahasiswaController@getWhere');
+ Route::get('/test-where', 'MahasiswaController@testWhere');
+ Route::get('/first', 'MahasiswaController@first');
+ Route::get('/find', 'MahasiswaController@find');
+ Route::get('/latest', 'MahasiswaController@latest');
+ Route::get('/limit', 'MahasiswaController@limit');
+ Route::get('/skip-take', 'MahasiswaController@skipTake');
+
+ Route::get('/soft-delete', 'MahasiswaController@softDelete');
+ Route::get('/with-trashed', 'MahasiswaController@withTrashed');
+ Route::get('/restore', 'MahasiswaController@restore');
+ Route::get('/force-delete', 'MahasiswaController@forceDelete');
