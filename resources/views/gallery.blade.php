@@ -5,22 +5,16 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="/css/bootstrap.min.css" rel="stylesheet">
-    <title>Data Mahasiswa</title>
+    <title>Gallery</title>
 </head>
 <body>
-<nav class="navbar navbar-expand-sm navbar-dark bg-dark">
- <ul class="navbar-nav">
- <li class="nav-item">
- <a class="nav-link active" href="/mahasiswa">Data Mahasiswa</a>
- </li>
- <li class="nav-item">
- <a class="nav-link" href="/dosen">Data Dosen</a>
- </li>
- <li class="nav-item">
- <a class="nav-link" href="/gallery">Gallery</a>
- </li>
- </ul>
- </nav>
+
+
+@extends('layouts.master')
+@section('title','gallery')
+@section('menuGallery','active')
+
+@section('content')
 
  <div class="container text-center mt-3 p-4 bg-white">
  <h1>Gallery</h1>
@@ -53,9 +47,7 @@
  </div>
 
 
- <footer class="bg-dark py-4 text-white mt-4">
-
- </footer>
+ @endsection
 
  </body>
  </html>

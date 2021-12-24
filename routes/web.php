@@ -24,7 +24,7 @@ Route::get('/mahasiswa/ilkom', function () {
         
          return view('universitas.mahasiswa',['mahasiswa' => $arrMahasiswa]);
          });
-        
+
 
 Route::get('/', function(){
     return view('welcome');
@@ -36,7 +36,9 @@ Route::get('/mahasiswa', function(){
     return view('mahasiswa', compact('nama','nilai'));
 });
 
-
+Route::get('/admin', function(){
+    return view('admin');
+});
 Route::get('mahasiswa', function () {
      $arrMahasiswa = ["Risa Lestari","Rudi Hermawan","Bambang Kusumo", 
      "Lisa Permata"];
@@ -52,3 +54,8 @@ Route::get('mahasiswa', function () {
      Route::get('gallery', function () {
      return view('gallery');
      });
+
+     Route::get('informasi/{fakultas}/{jurusan}', function ($fakultas, $jurusan) {
+         $data = [$fakultas, $jurusan];
+        return view('informasi')->with('data', $data);
+         })->name('info');
