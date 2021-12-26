@@ -27,7 +27,7 @@
                 <a class="nav-link @yield('menuInfo')"" href="/info">Informasi</a>
 </li>
         <li class="nav-item">
-            <a class="nav-link @yield('menuDiskusir')" href="/Diskusi">Diskusi</a>
+            <a class="nav-link @yield('menuDiskusi')" href="/Diskusi">Diskusi</a>
                     </li>
         <!-- <li class="nav-item">
             <a class="nav-link @yield('menuMahasiswa')" href="/mahasiswa">Data Mahasiswa</a>
@@ -45,10 +45,10 @@
 </nav>
 @yield('content')
 
-<!-- <footer class="bg-dark py-4 text-while mt-4">
+<footer class="bg-dark py-4 text-while mt-4">
     <div class="container">
         Sistem Informasi Mahasiswa | Copyright {{ date ("Y")}} W17aya
     </div>
-</footer> -->
+</footer>
 </body>
 </html>
