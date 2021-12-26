@@ -51,11 +51,26 @@ Route::get('mahasiswa', function () {
      return view('dosen')->with('dosen', $arrDosen);
      });
     
-     Route::get('gallery', function () {
-     return view('gallery');
+     Route::get('info', function () {
+     return view('info');
      });
+     Route::get('Beranda', function () {
+     return view('Beranda');
+     });
+     Route::get('Ormawa', function () {
+     return view('ormawa');
+     });
+     Route::get('Daftar', function () {
+     return view('daftar');
+     });
+     Route::get('/login', 'MahasiswaController@login');
+     Route::post('/login', 'MahasiswaController@prosesLogin');
+     Route::get('/logout', 'MahasiswaController@logout');
+     
+      Route::redirect('/', '/login');
 
-     Route::get('informasi/{fakultas}/{jurusan}', function ($fakultas, $jurusan) {
-         $data = [$fakultas, $jurusan];
-        return view('informasi')->with('data', $data);
-         })->name('info');
+
+    //  Route::get('informasi/{fakultas}/{jurusan}', function ($fakultas, $jurusan) {
+    //      $data = [$fakultas, $jurusan];
+    //     return view('informasi')->with('data', $data);
+    //      })->name('info');
