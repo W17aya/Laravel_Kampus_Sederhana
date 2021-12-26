@@ -1,6 +1,7 @@
 <?php
 
 use App\Mahasiswa;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,6 +31,10 @@ Route::get('/', function(){
     return view('welcome');
 });
 
+Auth::routes();
+
+Route::get('/home','HomeController@Index')->name('home');
+
 Route::get('/mahasiswa', function(){
     $nama ='Tya Kirana Putri';
     $nilai = 75;
@@ -51,8 +56,8 @@ Route::get('mahasiswa', function () {
      return view('dosen')->with('dosen', $arrDosen);
      });
     
-     Route::get('info', function () {
-     return view('info');
+     Route::get('Info', function () {
+     return view('Info');
      });
      Route::get('Beranda', function () {
      return view('Beranda');
@@ -67,10 +72,10 @@ Route::get('mahasiswa', function () {
      Route::post('/login', 'MahasiswaController@prosesLogin');
      Route::get('/logout', 'MahasiswaController@logout');
      
-      Route::redirect('/', '/login');
+    Route::redirect('/', '/login');
 
+    Route::get('/home', 'HomeController@index')->name('home');
 
-    //  Route::get('informasi/{fakultas}/{jurusan}', function ($fakultas, $jurusan) {
-    //      $data = [$fakultas, $jurusan];
-    //     return view('informasi')->with('data', $data);
-    //      })->name('info');
+    Route::get('/daftar-mahasiswa','MahasiswaController@daftarMahasiswa')->middleware('auth');
+    Route::get('/tabel-mahasiswa','MahasiswaController@tabelMahasiswa')->middleware('auth');
+    Route::get('/blog-mahasiswa','MahasiswaController@blogMahasiswa')->middleware('auth');
