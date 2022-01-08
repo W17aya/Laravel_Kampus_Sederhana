@@ -71,11 +71,17 @@ Route::get('mahasiswa', function () {
      Route::get('/login', 'MahasiswaController@login');
      Route::post('/login', 'MahasiswaController@prosesLogin');
      Route::get('/logout', 'MahasiswaController@logout');
-     
-    Route::redirect('/', '/login');
+    Route::redirect('/','/login');
 
     Route::get('/home', 'HomeController@index')->name('home');
 
     Route::get('/daftar-mahasiswa','MahasiswaController@daftarMahasiswa')->middleware('auth');
     Route::get('/tabel-mahasiswa','MahasiswaController@tabelMahasiswa')->middleware('auth');
     Route::get('/blog-mahasiswa','MahasiswaController@blogMahasiswa')->middleware('auth');
+
+    Route::get('/', 'SessionController@index');
+     Route::get('/buat-session', 'SessionController@buatSession');
+     Route::get('/akses-session', 'SessionController@aksesSession');
+     Route::get('/hapus-session', 'SessionController@hapusSession');
+     Route::get('/flash-session', 'SessionController@flashSession');
+    

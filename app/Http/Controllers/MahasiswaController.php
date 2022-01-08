@@ -11,6 +11,12 @@ namespace App\Http\Controllers;
  return view('halaman',['judul' => 'Daftar Mahasiswa']);
  }
 
+
+ public function all(){
+     $result = Mahasiswa::all();
+     dump($result);
+ }
+ 
  public function tabelMahasiswa()
  {
  return view('halaman',['judul' => 'Tabel Mahasiswa']);

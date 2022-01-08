@@ -5,7 +5,7 @@
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '69a7f016861d112465a4e29a281ccb9e0005c9c8',
+        'reference' => '6ea28d08141d1f088e2a1d1f458430438eba5f62',
         'name' => 'laravel/laravel',
         'dev' => true,
     ),
@@ -26,15 +26,6 @@
             'install_path' => __DIR__ . '/../brick/math',
             'aliases' => array(),
             'reference' => 'ca57d18f028f84f777b2168cd1911b0dee2343ae',
-            'dev_requirement' => false,
-        ),
-        'composer/package-versions-deprecated' => array(
-            'pretty_version' => '1.11.99.4',
-            'version' => '1.11.99.4',
-            'type' => 'composer-plugin',
-            'install_path' => __DIR__ . '/./package-versions-deprecated',
-            'aliases' => array(),
-            'reference' => 'b174585d1fe49ceed21928a945138948cb394600',
             'dev_requirement' => false,
         ),
         'cordoval/hamcrest-php' => array(
@@ -59,12 +50,12 @@
             'dev_requirement' => false,
         ),
         'doctrine/dbal' => array(
-            'pretty_version' => '3.2.0',
-            'version' => '3.2.0.0',
+            'pretty_version' => '2.13.6',
+            'version' => '2.13.6.0',
             'type' => 'library',
             'install_path' => __DIR__ . '/../doctrine/dbal',
             'aliases' => array(),
-            'reference' => '5d54f63541d7bed1156cb5c9b79274ced61890e4',
+            'reference' => '67ef6d0327ccbab1202b39e0222977a47ed3ef2f',
             'dev_requirement' => false,
         ),
         'doctrine/deprecations' => array(
@@ -424,7 +415,7 @@
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '69a7f016861d112465a4e29a281ccb9e0005c9c8',
+            'reference' => '6ea28d08141d1f088e2a1d1f458430438eba5f62',
             'dev_requirement' => false,
         ),
         'laravel/tinker' => array(
@@ -528,12 +519,6 @@
             'aliases' => array(),
             'reference' => '7c125dc2463f3e144ddc7e05e63077109508c94e',
             'dev_requirement' => true,
-        ),
-        'ocramius/package-versions' => array(
-            'dev_requirement' => false,
-            'replaced' => array(
-                0 => '1.11.99',
-            ),
         ),
         'opis/closure' => array(
             'pretty_version' => '3.6.2',
@@ -660,15 +645,6 @@
             'aliases' => array(),
             'reference' => 'ddd05b9d844260353895a3b950a9258126c11503',
             'dev_requirement' => true,
-        ),
-        'psr/cache' => array(
-            'pretty_version' => '1.0.1',
-            'version' => '1.0.1.0',
-            'type' => 'library',
-            'install_path' => __DIR__ . '/../psr/cache',
-            'aliases' => array(),
-            'reference' => 'd11b50ad223250cf17b86e38383413f5a6764bf8',
-            'dev_requirement' => false,
         ),
         'psr/container' => array(
             'pretty_version' => '1.1.2',
