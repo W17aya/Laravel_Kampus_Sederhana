@@ -1,7 +1,5 @@
 <?php
 
-use App\Mahasiswa;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,73 +13,26 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/mahasiswa/ilkom', function () {
-    return view('universitas.mahasiswa');
-     });
+// Route::get('/', 'HomeController@index')->name('home');
 
-     Route::get('/mahasiswa', function () {
-         $arrMahasiswa = ["Risa Lestari","Rudi Hermawan","Bambang Kusumo",
-         "Lisa Permata"];
-        
-         return view('universitas.mahasiswa',['mahasiswa' => $arrMahasiswa]);
-         });
+// Auth::routes();
+
+// Route::get('/users/{user}/edit', 'UserController@edit')
+// ->middleware('can:update,user');
+
+// Route::patch('/users/{user}', 'UserController@update')
+// ->middleware('can:update,user');
+
+// Route::delete('/users/{user}', 'UserController@destroy')
+// ->middleware('can:delete,user');
 
 
-Route::get('/', function(){
-    return view('welcome');
-});
+Route::get('login','MahasiswaController@login');
+Route::get('login','MahasiswaController@proseslogin');
+Route::get('/logout','MahasiswaController@logout');
 
-Auth::routes();
+Route::redirect('/','login');
 
-Route::get('/home','HomeController@Index')->name('home');
-
-Route::get('/mahasiswa', function(){
-    $nama ='Tya Kirana Putri';
-    $nilai = 75;
-    return view('mahasiswa', compact('nama','nilai'));
-});
-
-Route::get('/admin', function(){
-    return view('admin');
-});
-Route::get('mahasiswa', function () {
-     $arrMahasiswa = ["Risa Lestari","Rudi Hermawan","Bambang Kusumo", 
-     "Lisa Permata"];
-     return view('mahasiswa')->with('mahasiswa', $arrMahasiswa);
-     });
-    
-     Route::get('dosen', function () {
-     $arrDosen = ["Maya Fitrianti, M.M.","Prof. Silvia Nst, M.Farm.",
-     "Dr. Umar Agustinus","Dr. Syahrial, M.Kom."];
-     return view('dosen')->with('dosen', $arrDosen);
-     });
-    
-     Route::get('Info', function () {
-     return view('Info');
-     });
-     Route::get('Beranda', function () {
-     return view('Beranda');
-     });
-     Route::get('Ormawa', function () {
-     return view('ormawa');
-     });
-     Route::get('Daftar', function () {
-     return view('daftar');
-     });
-     Route::get('/login', 'MahasiswaController@login');
-     Route::post('/login', 'MahasiswaController@prosesLogin');
-     Route::get('/logout', 'MahasiswaController@logout');
-    Route::redirect('/','/login');
-
-    Route::get('/home', 'HomeController@index')->name('home');
-
-    Route::get('/daftar-mahasiswa','MahasiswaController@daftarMahasiswa')->middleware('auth');
-    Route::get('/tabel-mahasiswa','MahasiswaController@tabelMahasiswa')->middleware('auth');
-    Route::get('/blog-mahasiswa','MahasiswaController@blogMahasiswa')->middleware('auth');
-
-    Route::get('/', 'SessionController@index');
-     Route::get('/buat-session', 'SessionController@buatSession');
-     Route::get('/akses-session', 'SessionController@aksesSession');
-     Route::get('/hapus-session', 'SessionController@hapusSession');
-     Route::get('/flash-session', 'SessionController@flashSession');
-    
+route::get('daftar-mahasiswa','MahasiswaController@daftarMahasiswa')->middleware('login');
+route::get('tabel-mahasiswa','MahasiswaController@tabelMahasiswa')->middleware('login');
+route::get('blog-mahasiswa','MahasiswaController@blogMahasiswa')->middleware('login');
